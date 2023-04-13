@@ -1,10 +1,10 @@
-# [Título del trabajo]
+# [Medio Ambiente]
 
 [Descripción breve del proyecto a realizar (2-3 frases).]
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+[Jesus Tadeo Reveron (tadeoflowpesado), Alvaro Ruiz(ReyesdeEuropa14), Marcos Hernandez(marcosh09)]
 
 ## Objetivos del trabajo
 
