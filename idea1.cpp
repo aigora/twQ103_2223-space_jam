@@ -24,7 +24,7 @@ void obtenerDatosFuente(struct FuenteAgua fuentes[], int n, const char *nombreBu
         }
     }
 
-    if (!encontrada) {
+    if (encontrada==0) {
         printf("No se encontraron fuentes de agua con ese nombre.\n");
     }
 }
@@ -35,7 +35,7 @@ void buscar_por_ph(struct FuenteAgua fuentes[], int n, float ph, int i) { //Filt
     for (i = 0; i < n; i++) {
         if (fuentes[i].pH == ph) {
             printf("Fuente_%d:\n", i + 1);
-            printf("Parámetros: %s\n", fuentes[i].parametros);
+            printf("Parametros: %s\n", fuentes[i].parametros);
             printf("pH: %.2f\n", fuentes[i].pH);
             printf("Conductividad: %d\n", fuentes[i].conductividad);
             printf("Turbidez: %d\n", fuentes[i].turbidez);
@@ -69,7 +69,12 @@ void filtrar(struct FuenteAgua fuentes[], int n, int coliformes, int conductivid
 }
 
 int main(){
-	FILE *fichero = fopen("ficheroagua.txt", "r");
+	char filename[100];
+	
+	printf("Introduce el nombre del fichero que quieres leer (delicias.txt, embajadores.txt, lavapies.txt, 202301_ Lavapies.txt)\n");
+	scanf("%s", filename);
+	
+	FILE *fichero = fopen(filename, "r");
 	
 		if (fichero == NULL) {
 		printf("Error, no puede abrir el fichero.\n");
