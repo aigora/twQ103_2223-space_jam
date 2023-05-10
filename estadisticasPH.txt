@@ -1,3 +1,0 @@
-La media del PH es: 7.542399
-El PH maximo es: 6.000000
-El PH minimo es: 0.000000
