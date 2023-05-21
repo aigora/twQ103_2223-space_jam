@@ -182,10 +182,28 @@ int main() {
     char nombreBuscado[MAX_NOMBRE];
     float promedioPh, maxPh, minPh;
     int maxCond, minCond, maxTurb, minTurb, maxColi, minColi;
-    int opcion;
+    int opcion, opcion2;
     char filename[100];
     
-    printf("Introduce el nombre del archivo: (delicias.txt, embajadores.txt, lavapies.txt, 202301_ Lavapies.txt)\n ");
+    printf("     \n"); 
+	printf("				*************************************************\n"); 
+	printf("				*                                               *\n");
+	printf("				*                                               *\n"); 
+	printf("				*           OBJETIVO MEDIO AMBIENTE             *\n");
+	printf("				*           -----------------------             *\n"); 
+	printf("				*          Investigacion de las aguas           *\n");
+	printf("				*                  madrilenas                   *\n"); 
+	printf("				*                                               *\n");
+	printf("				*                                               *\n"); 
+	printf("				*                                               *\n");
+	printf("				*************************************************\n"); 
+	printf("     \n"); 
+	printf("			   Bienvenidos a nuestro proyecto de investigacion acerca de\n"); 
+	printf("			   las aguas madrilenas, donde podras conocer informacion\n");
+	printf("			   interactuando con cada una de las opciones que hay debajo:\n"); 
+	printf("     \n"); 
+    
+    printf("Introduce el nombre del archivo: (delicias.txt, embajadores.txt, 202301_ Lavapies.txt)\n ");
 	scanf("%s", filename);
 
     // Abrir el archivo en modo lectura
@@ -220,7 +238,8 @@ int main() {
         printf("4. Calcular maximo pH\n");
         printf("5. Calcular minimo pH\n");
         printf("6. Estadasticas de calidad del agua\n");
-        printf("7. Salir\n");
+        printf("7. Ver fichero completo\n");
+		printf("8. Salir\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
@@ -248,7 +267,7 @@ int main() {
             }
             case 5: {
                 float minimo = pHmin(fuentes, numfuente);
-                printf("\nEl minimo pH de las fuentes de agua es: %.2f\n", minimo);
+                printf("\npH minimo: %.2f\n", minimo);
                 break;
             }
             case 6: {
@@ -271,6 +290,79 @@ int main() {
                 break;
             }
             case 7: {
+                printf("      \n");
+				printf("1.Embajadores\n"); 
+				printf("2.Delicias\n"); 
+				printf("3.Lavapies\n"); 
+				printf("4.Menu principal\n");
+				printf("      \n");
+				scanf("%d", &opcion2);
+				
+				FILE *archivo;
+				
+				switch (opcion2){
+					case 1: 
+						printf("Informacion acerca de las fuentes de Embajadores: \n");
+						printf("*************************************************\n");
+	   					int caracter;
+	  					archivo = fopen("embajadores.txt", "r");
+	
+	   					if (archivo == NULL) {
+	      				printf("No se pudo abrir el archivo.\n");
+	      				return 1;
+	   					}
+	
+	   					while ((caracter = fgetc(archivo)) != EOF) {
+	      				printf("%c", caracter);
+	   					}
+	
+	   					fclose(archivo);
+						break;				
+					
+				
+					case 2: 
+						printf("Informacion acerca de las fuentes de Delicias: \n");
+						printf("**********************************************\n");
+	
+	  					archivo = fopen("delicias.txt", "r");
+	
+	   					if (archivo == NULL) {
+	      				printf("No se pudo abrir el archivo.\n");
+	      				return 1;
+	   					}
+	
+	   					while ((caracter = fgetc(archivo)) != EOF) {
+	      				printf("%c", caracter);
+	   					}
+	
+	   					fclose(archivo);
+						break;				
+				
+					
+					case 3: 
+						printf("Informacion acerca de las fuentes de Lavapies: \n");
+						printf("**********************************************\n");
+	
+	  					archivo = fopen("lavapies.txt", "r");
+	
+	   					if (archivo == NULL) {
+	      				printf("No se pudo abrir el archivo.\n");
+	      				return 1;
+	   					}
+	
+	   					while ((caracter = fgetc(archivo)) != EOF) {
+	      				printf("%c", caracter);
+	   					}
+	
+	   					fclose(archivo);
+						break;	
+					default: 
+						printf("Opcion incorrecta, selecciona el numero correspondiente a la opcion deseada\n");
+						break;
+					}
+            
+            }
+            case 8: {
                 printf("\nSaliendo del programa...\n");
                 break;
             
